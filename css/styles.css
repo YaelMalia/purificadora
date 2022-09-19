@@ -1,0 +1,141 @@
+
+
+.html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.preloader{
+    margin-top: 27%;
+    margin-left: 50%;
+    align-items: center;
+}
+
+body{
+    display: grid;
+    height: 100%;
+    
+}
+
+.header{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    min-width: max-content;
+    -webkit-box-shadow: 0px 10px 31px -10px #000000; 
+box-shadow: 0px 10px 31px -10px #000000;
+}
+
+.nav-link{
+    font-weight: bold;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.logo-img{
+    transition: 0.9s;
+}
+.logo-img:hover{
+    transform: scale(1.05);
+}
+
+
+
+
+/*----------body-----------*/
+
+
+/*----------body>contenido--------*/
+
+
+
+/*--------- FIN body>contenido*/
+.contenido{
+    display: grid;
+    padding-top: 130px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+/*--------- FIN body----------------*/
+
+
+
+
+
+
+/*-----------footer---------*/
+.izq{
+    grid-area: izq;
+    text-align: center;
+    padding-top: 25px;
+    /*
+    border-right-width: 1px;
+    border-right-style:solid;
+    border-color:rgba(209, 208, 208, 0.699);*/
+    color: #535353;
+
+}
+.der{
+    grid-area: der;
+    padding-top: 25px;
+    text-align: center;
+    color: #535353;
+}
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(247, 247, 247);
+    display: grid;
+    grid-template-areas: 
+    "izq"
+    "der";
+
+    grid-template: "izq   der"  200px/
+                    50%   50%;
+}
+
+
+/* Responsive design */
+
+/* Teléfonos y dispositivos pequeños (Bootstrap dimensions) : https://getbootstrap.com/docs/4.1/layout/overview/ */
+@media (max-width: 576px) {
+    .texto-inicio{
+        font-size: 25px;
+    }
+    .logo_lux{
+        width: 100px;
+        height: 60px;
+    }
+    .der{
+        font-size: 14px;
+    }
+}
+
+
+.btn-wsp{
+    position: fixed;
+    line-height: 40px;
+    bottom: 52px;
+    /*right: 52px;*/
+    left: 50px;
+    background: #0df053;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 0px 1px 10px rgb(0,0,0,0.3);
+    z-index: 100;
+    transition: 0.9s;
+}
+.btn-wsp:hover{
+    text-decoration: none;
+    color:#0df053;
+    background: #fff;
+}
+
+
+/* Fin responsive design */
