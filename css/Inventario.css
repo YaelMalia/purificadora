@@ -1,0 +1,38 @@
+
+
+body{
+    height: 100%;
+    background-color:rgb(46, 94, 250);
+}
+
+.header{
+    background-color: rgb(52, 55, 255);
+    text-align: center; padding-top: 15px;
+    height: 120px;
+     -webkit-box-shadow: 0px 10px 31px -10px #000000; box-shadow: 0px 10px 31px -10px #000000;
+}
+
+.contenidoInv{
+    text-align: center;
+    margin-top: 180px;
+    z-index: -1;
+    width: 100%;
+    height: 600px;  
+    padding-left: 30px;
+    padding-right: 30px; 
+}
+
+
+
+
+
+/*------------Media Querys----------*/
+@media (max-width: 770px){
+    .header{
+        height: 165px;
+    }
+    .logoP{
+        border-right-width: 0px;
+    }
+    
+}

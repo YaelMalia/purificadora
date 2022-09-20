@@ -19,7 +19,7 @@ body{
 }
 
 .header{
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     width: 100%;
     min-width: max-content;
@@ -52,12 +52,38 @@ box-shadow: 0px 10px 31px -10px #000000;
 
 /*--------- FIN body>contenido*/
 .contenido{
+    z-index: 0;
     display: grid;
     padding-top: 130px;
     padding-left: 30px;
     padding-right: 30px;
+    margin-top: 30px;
 }
 
+.segundo-apartado{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    height: 600px;
+    /*background-color: #0df053;*/
+
+    grid-template-areas: 
+    "f-part"
+    "s-part";
+
+    grid-template: "f-part    s-part" 600px/
+                    50%         50%;
+}
+.f-part{
+    padding-top: 25px;
+    grid-area: f-part;
+    /*background-color: #535353;*/
+}
+.s-part{
+    padding-top: 25px;
+    grid-area: s-part;
+   /*background-color: aquamarine;*/
+}
 
 /*--------- FIN body----------------*/
 
@@ -99,23 +125,6 @@ box-shadow: 0px 10px 31px -10px #000000;
 }
 
 
-/* Responsive design */
-
-/* Teléfonos y dispositivos pequeños (Bootstrap dimensions) : https://getbootstrap.com/docs/4.1/layout/overview/ */
-@media (max-width: 576px) {
-    .texto-inicio{
-        font-size: 25px;
-    }
-    .logo_lux{
-        width: 100px;
-        height: 60px;
-    }
-    .der{
-        font-size: 14px;
-    }
-}
-
-
 .btn-wsp{
     position: fixed;
     line-height: 40px;
@@ -127,7 +136,7 @@ box-shadow: 0px 10px 31px -10px #000000;
     border-radius: 50px;
     text-align: center;
     font-size: 40px;
-    box-shadow: 0px 1px 10px rgb(0,0,0,0.3);
+    box-shadow: 0px 2px 10px rgb(0,0,0,0.3);
     z-index: 100;
     transition: 0.9s;
 }
@@ -136,6 +145,85 @@ box-shadow: 0px 10px 31px -10px #000000;
     color:#0df053;
     background: #fff;
 }
+
+.Pedidos{
+    left: 3.5%;
+    top: 75%;
+    border-radius: 40px;
+    position: fixed;
+    z-index: 3;
+    transition: 0.9s;
+    background-color: #fff;
+    border: 5px;
+    /*
+    -webkit-box-shadow: 0px 0px 13px 1px #0002DB; 
+    box-shadow: 0px 0px 13px 1px #0002DB;*/
+}
+
+.Pedidos:hover{
+    -webkit-box-shadow: 0px 0px 13px 1px #ffffff; 
+    box-shadow: 0px 0px 13px 1px #ffffff;
+}
+
+/* Responsive design */
+
+/* Teléfonos y dispositivos pequeños (Bootstrap dimensions) : https://getbootstrap.com/docs/4.1/layout/overview/ */
+@media (max-width: 1020px){
+    
+    .btn-wsp{
+        left: 30px;
+    }
+    .Pedidos{
+        left: 30px;
+        top: 85%;
+    }
+
+    .Interiorinstalaciones{
+        width: 450px;
+        height: 220px;
+    }
+
+    .GMaps{
+        width: 200px;
+        height: 120px;
+    }
+
+    .s-part{
+        margin-top: 35px;
+    }
+
+    .segundo-apartado{
+        grid-template: "f-part"  250px
+                        "s-part" 250px/
+                        100%        
+    }
+}
+
+
+@media (max-width: 576px) {
+    .texto-inicio{
+        font-size: 25px;
+    }
+    .logo_lux{
+        width: 100px;
+        height: 60px;
+    }
+    .der{
+        font-size: 14px;
+    }
+    
+    .btn-wsp{
+        left: 30px;
+    }
+
+    .Pedidos{
+        left: 30px;
+    }
+
+}
+
+
+
 
 
 /* Fin responsive design */
