@@ -1,0 +1,214 @@
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background: linear-gradient(90deg,#0e3959 0%,#0e3959 30%,#03a9f5 30%,#03a9f5 100%);
+}
+
+.contacto
+{
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;
+}
+
+.contacto .titulo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 2em;
+}
+
+.contacto .titulo h2
+{
+    color: #fff;
+    font-weight: 500;
+}
+
+.C
+{
+    grid-area: form;
+}
+.I
+{
+    grid-area: info;
+}
+.M
+{
+    grid-area: map;
+}
+.form
+{
+    padding: 50px;
+    background: #fff;
+    box-shadow: 0 5px 35px rgba(0,0,0,0,0.15);
+}
+
+.form h3
+{
+    color: #0e3959;
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.box
+{
+   position: relative; 
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   grid-template-rows: 5fr 4fr;
+   grid-template-areas: 
+   "form info"
+   "form map";
+   grid-gap: 20px;
+   margin-top: 20px;
+
+}
+
+.usuarioInfo
+{
+    position: relative;
+    width: 100%;
+}
+
+.usuarioInfo .detalle
+{
+    display: flex;
+    gap: 20px;
+}
+
+.cajas
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.usuarioInfo .detalle2 .cajas
+{
+    width: 100%;
+}
+
+.cajas span
+{
+    color: #18b7ff;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.cajas input
+{
+    padding: 6px;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid #333;
+}
+
+.cajas textarea 
+{
+    padding: 6px;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid #333;
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+
+.cajas input[type="submit"]
+{
+    background: #ff578b;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+    max-width: 120px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 14px 15px;
+}
+
+.cajas ::placeholder
+{
+    color: #999;
+}
+/*------------------INFORMACION---------------*/
+.I
+{
+    background: #0e3959;
+}
+
+.I h3
+{
+    color: #fff;
+}
+
+.I .infoBox div
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.I .infoBox div span
+{
+    min-width: 30px;
+    height: 30px;
+    color: #fff;
+    background: #18b7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.I .infoBox div p
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.sci
+{
+    margin-top: 40px;
+    display: flex;
+    
+}
+.sci li
+{
+    list-style: none;
+    margin-right: 15px;
+}
+
+.sci li a
+{
+    color: #fff;
+    font-size: 1.9em;
+    color: #ccc;
+}
+
+.sci li a:hover
+{
+    color: #ff578b;
+}
+
+/*------------------MAPA---------------*/
+.M
+{
+    padding: 0;
+}
+
+iframe
+{ 
+    max-width: 400px;
+    max-height: 320px;
+}
