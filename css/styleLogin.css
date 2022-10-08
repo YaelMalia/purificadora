@@ -30,7 +30,7 @@ body
     position: relative;
     width: 450px;
     height: 500px;
-    margin: 30px;
+    /*margin: 30px;*/
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     background: rgba(202, 202, 202, 0.4);
@@ -122,3 +122,26 @@ body
 {
     color: #f53677;
 }
+
+
+
+.logo-img{
+    height: 80px;
+    position:absolute;
+    margin-left:50px;
+    margin-top: 37px;
+}
+/*-----   Responsive design   -----*/
+
+@media (max-width: 800px) {
+   .logo-img{
+    margin-left: 30px;
+    height: 50px;
+   } 
+}
+
+@media (max-width: 300px) {
+    .logo-img{
+     display: none;
+    } 
+ }

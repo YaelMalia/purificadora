@@ -6,26 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styleLogin.css">
+
+    <script src="js/verifLogin.js"></script>
+
     <title>Login</title>
 </head>
-<body>
-  <div class="container-fluid"> 
+<body id = "cuerpo">
+
+<!--Scripts JS y JQ-->
+<script type="text/javascript">
+  
+</script>
+
+  <div class="container-fluid" id = "mainsin"> 
 
     <!--COLUMNAS DE LA TARJETA-->
     <div class="row">
-      <div class="col-md-6 login">
-          <div class="card">
+      <img src="sources/images/logo-purificadora.png" alt="Purificadora gota de ángel" class="logo-img">
+      <div class="col-md-6 login" id = "login">
+          <div class="card" id = "card">
             <div class="Contenido">
               <h2>Iniciar sesión</h2>
                 <form>               
                   <div class="inputBx">
                     <span>Usuario</span>
-                    <input type="text">
+                    <input type="text" id = "inputUser">
                   </div>
 
                   <div class="inputBx">
                     <span>Contraseña</span>
-                    <input type="password">
+                    <input type="password"  id = "inputPass">
                   </div>
 
                   <div class="remember">
@@ -33,7 +43,7 @@
                   </div>
                  
                   <div class="inputBx">
-                    <input type="submit" value="Sign in">
+                    <input type="submit" value="Iniciar sesión" onclick="VerifDatosLogin();">
                   </div>
 
                   <div class="inputBx">
@@ -47,6 +57,10 @@
     </div>
     <!--FIN COLUMNAS DE LA TARJETA-->
   </div>
+
+
+  
+
 
 </body>
 </html>
