@@ -15,8 +15,6 @@ function ocultarBody(){
     document.getElementById("footer").style.display = "none";
     document.getElementById("btn-wsp").style.display = "none";
     document.getElementById("Pedidos").style.display = "none";
-    
-   
 }
 
 function mostrarBody(){
@@ -26,3 +24,4 @@ function mostrarBody(){
     $("#btn-wsp").fadeIn(2000);
     $("#Pedidos").fadeIn(2000);
 }
+

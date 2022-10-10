@@ -1,0 +1,28 @@
+[
+    {
+        "no": 1,
+        "mensaje": "Excelente servicio, altamente recomendado",
+        "remitente": "maria44@gmail.com"
+    },
+    {
+        "no": 2,
+        "mensaje": "Llegaron mis garrafones en perfecto estado 10 de 10",
+        "remitente": "juan01@gmail.com"
+    },
+    {
+        "no": 3,
+        "mensaje": "Brindan excelente atención al cliente, muchas gracias",
+        "remitente": "ramirez74@gmail.com"
+    },
+    {
+        "no": 4,
+        "mensaje": "Atención inmediata y de buena calidad",
+        "remitente": "carmen94@gmail.com"
+    },
+    {
+        "no": 5,
+        "mensaje": "Las instalaciones son muy bonitas y cumplen con los estándares de calidad",
+        "remitente": "patrick123@gmail.com"
+    }
+
+]
