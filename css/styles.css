@@ -197,6 +197,10 @@ box-shadow: 0px 10px 31px -10px #000000;
                         "s-part" 250px/
                         100%        
     }
+
+    .calaverita{
+       margin-left:-12%;
+    }
 }
 
 
@@ -218,6 +222,11 @@ box-shadow: 0px 10px 31px -10px #000000;
 
     .Pedidos{
         left: 30px;
+    }
+
+    .calaverita{
+
+        left:-10%;
     }
 
 }

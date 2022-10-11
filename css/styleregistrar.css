@@ -165,3 +165,26 @@ span
 }
 
 
+
+
+.logo-img{
+    height: 80px;
+    position:absolute;
+    margin-left:50px;
+    margin-top: 37px;
+}
+
+/*-----   Responsive design   -----*/
+
+@media (max-width: 800px) {
+    .logo-img{
+     margin-left: 30px;
+     height: 50px;
+    } 
+ }
+ 
+ @media (max-width: 300px) {
+     .logo-img{
+      display: none;
+     } 
+  }

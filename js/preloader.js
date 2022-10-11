@@ -2,6 +2,7 @@ window.onload = function(){
     ocultarBody();
     setTimeout(ocultarPre, 4000);
     setTimeout(mostrarBody, 4001);
+    setTimeout(mostrarCalaverita, 5500);
 };
 
 
@@ -10,6 +11,7 @@ function ocultarPre(){
 }
 
 function ocultarBody(){
+    document.getElementById("calaverita").style.display = "none";
     document.getElementById("contenido").style.display = "none";
     document.getElementById("header").style.display = "none";
     document.getElementById("footer").style.display = "none";
@@ -25,3 +27,8 @@ function mostrarBody(){
     $("#Pedidos").fadeIn(2000);
 }
 
+
+/* Para mes de muertos */
+function mostrarCalaverita(){
+    $("#calaverita").slideDown(800);
+}

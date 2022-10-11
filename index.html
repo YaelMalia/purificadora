@@ -17,6 +17,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Purificadora "Gota de ángel</title>
 
+
+    <script type="text/javascript">
+        function ocultarCalaverita(){
+            $("#calaverita").slideUp(800);
+        }
+    </script>
 </head>
 <header id="header" class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:50px; padding-right:50px;">
@@ -47,6 +53,16 @@
 <body>
     <div id = "preloader" class="preloader">
         <span class="loader"></span>
+    </div>
+    <div class="calaverita" id = "calaverita" style="position:fixed; z-index: 2; width: 550px; height: 260px; background-color:#000000; left:30%; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+        <a href="javascript:void(0)" onclick="ocultarCalaverita()"><div style="position:absolute; color: #fff; left:95%"><b>X</b></div></a>
+       <div style="margin-top: 10px; color: #fff;">
+        <center><img src="sources/images/calaveras.png" height="150" alt="calaveritas">
+        <div style="margin-top: 10px;">
+            <h3><b>Felíz mes de los santos les desea</b>
+                <br><!--<img src="sources/images/LogoEmpresa.png" height="25" alt="LUX Enterprise">-->LUX Enterprise S.A. de C.V.</h3></center>
+        </div>
+       </div>
     </div>
     <div id = "contenido" class="contenido">
         <section id="inicio"></section>
