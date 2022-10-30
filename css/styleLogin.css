@@ -90,17 +90,20 @@ body
     border-radius: 30px;
 }
 
-.login .card .Contenido .inputBx input[type="submit"]
+.login .card .Contenido .inputBx .btnlogueo
 {
     background: #ff578b;
     color: #fff;
     outline: none;
     border: none;
+    padding-top: 10px;
+    border-radius: 15px;
+    height: 50px;
     font-weight: 500;
     cursor: pointer;
 }
 
-.login .card .Contenido .inputBx input[type="submit"]:hover
+.login .card .Contenido .inputBx .btnlogueo:hover
 {
     background:#f53677;
 }
