@@ -1,4 +1,6 @@
-
+<?php 
+    require_once("session.php");
+?>
 
 
 <!DOCTYPE html>
@@ -44,11 +46,24 @@
                     
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="Login.php" class="nav-item nav-link active">Iniciar sesión</a>
-                    <a href="#Instalaciones" class="nav-item nav-link">Instalaciones</a>
+                <a href="#Instalaciones" class="nav-item nav-link">Instalaciones</a>
                     <a href="#" class="nav-item nav-link">Precios</a>
-                    <a href="Mensajes.html" class="nav-item nav-link" style="display:none;">Buzón de mensajes</a>
-                    <a href="inventario.html" class="nav-item nav-link" style="display:none;">Inventario</a>
+                    <?php 
+                        if($_SESSION["tipo"] == 1){
+
+                    ?>
+                    <a href="Mensajes.html" class="nav-item nav-link" style="display:block;">Buzón de mensajes</a>
+                    <a href="inventario.html" class="nav-item nav-link" style="display:block;">Inventario</a>
+                    <?php
+                        }
+                    ?>
+                    <?php 
+                        if(isset($_SESSION["correo"])){
+                    ?>
+                    <a id="cerrar" href="index.html" class="nav-item nav-link active">Cerrar sesión</a>
+                    <?php 
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -144,6 +159,20 @@
     </a>
     <!--Fin botón Pedidos-->
 </body>
+
+
+<!-- SCRIPTS -->
+<script type = "text/javascript">
+        $("#cerrar").click(function(){
+            $.post("EndSession.php");
+            window.location.href = "index.html";
+        });
+    </script>
+
+<!-- Fin scripts -->
+
+
+
 <footer>
     <div id = "footer" class = "footer">
         <div class="izq">

@@ -1,3 +1,4 @@
+/*
 window.onload() = function(){
     ocultarBody();
     setTimeout(mostrarBody, 4001);
@@ -10,22 +11,55 @@ window.onload() = function(){
     $("#cuerpo").fadeIn(1000);
   }
 
+*/
 
 
 function VerifDatosLogin(){
-    usuario = document.getElementById("inputUser").value;
-    if(usuario == null || usuario == "" || usuario == "\\n"){
-        window.alert("Usuario ingresado está vacío o no es valido");
-    }else if(usuario.includes(' ')){
-        window.alert("El usuario no puede tener espacios");
+    correo = document.getElementById("inputCorreo").value;
+    if(correo == null || correo == "" || correo == "\\n"){
+        alertify.alert("Error", "Correo ingresado está vacío");
+        return false;
+    }else if(!correo.includes('@') || !correo.includes(".com")){
+        alertify.alert("Error", "El correo no tiene el formato adecuado");
+        return false;
     }else{
         pass = document.getElementById("inputPass").value;
         if(pass == null || pass == "" || pass == "\\n"){
-            window.alert("La contraseña está vacía o no es válida");
+            alertify.alert("Error", "La contraseña está vacía o no es válida");
+            return false;
         }else if(pass.includes(' ')){
-            window.alert("La contraseña no puede tener espacios");
+            alertify.alert("Error", "La contraseña no puede tener espacios");
+            return false;
         }else{
-            //Llamar a un método de logueo futuro
+            //Función de logueo
+            
+            parametros = {
+                "correo":correo,
+                "pass":pass
+            };
+            let SegundoR = "";
+            $.ajax({
+                type: 'POST',
+                url: "validarLogin.php",
+                data: parametros,
+                async: false,
+                success: function(resultado){
+                    if(resultado == "correcto"){
+                        SegundoR = "si";
+                    }
+                    if(resultado == "incorrecto"){
+                        SegundoR = "no";
+                        alertify.alert("Error", "Correo o contraseña inválidos");
+                    }
+                }
+        
+            });
+            if(SegundoR == "si"){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     }
 }

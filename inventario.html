@@ -9,28 +9,33 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/Inventario.css">
+
+    <script src="js/jquery.js"></script>
+
+    <link rel="stylesheet" href="formulariosCRUD/css/estilos-formularios.css">
 </head>
 <header class = "header">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-md-4" class = "logoP" style="border-right-width: 1px; border-right-style:solid; border-color:rgba(209, 208, 208, 0.699)">
+            <div class="col-lg-4 col-md-4" class = "logoP" style="border-right-width: 1px; border-right-style:solid; border-color:rgba(209, 208, 208, 0.699);">
                 <img src="sources/images/logo-purificadora.png" height="80" alt="Purificadora gota de ángel">
             </div>
             <div class="col-lg-8 col-md-8">
-                <p><h2><font color="white">Inventario de ventas</font></h2></p>
+                <p><h2><font color="black">Inventario de ventas</font></h2></p>
             </div>
         </div>
     </div>
 </header>
 <body>
     <div class="contenidoInv">
-        <p><h2><font color = "white">Tabla de ventas</font></h2></p>
-        <div class="container-fluid" style="height:600px;  background-color:rgb(46, 94, 250); z-index: -1;">
+        <p><h2><font color = "black">Panel de ventas</font></h2></p>
+        <br><br><br>
+        <div class="container-fluid" style="height:600px;  background-color:#f0efef; z-index: 1; box-shadow: 0px 12px 16px 4px rgba(0,0,0,0.67);">
             <div class="row">
                 <!--Tabla de inventario-->
                 <!--<input type="button" value="Generar reporte" style="margin-left: 15px;">-->
                 <div class="col-lg-12">
-                    <div class="tablaInv">
+                    <!--<div class="tablaInv">
                         <table class="table">
                             <thead class="thead-dark">
                               <tr>
@@ -68,12 +73,44 @@
                           
                          
                     </div>
+                </div> -->
+
+                <!--  Div en el cual se va a mostrar toda la información de manera dinámica -->
+                
+                <div class="acciones" id="acciones">
+                  <div class="botones" id="botones">
+                    <div class="boton-actuador" id="insert"> Nueva venta </div> <div class="boton-actuador" id="update"> Modificar venta </div> <div class="boton-actuador" id="delete"> Eliminar venta </div> <div class="boton-actuador" id="find"> Consultar ventas </div>
+                  </div>
+                  <!--  Div para obtener formulario  -->
+                  <div class="m-contenido" id="m-contenido">
+
+                  </div>
+
                 </div>
+
             </div>
         </div>
         <div class="reportes">
 
         </div>
     </div>
+       
+    <script type="text/javascript">
+      $("#insert").click(function(){
+        document.getElementById("m-contenido").innerHTML = "";
+        $("#m-contenido").load("formulariosCRUD/insertar.php");
+      });
+
+      $("#update").click(function(){
+        document.getElementById("m-contenido").innerHTML = "";
+        $("#m-contenido").load("formulariosCRUD/modificar.php");
+      });
+
+      $("#delete").click(function(){
+        document.getElementById("m-contenido").innerHTML = "";
+        $("#m-contenido").load("formulariosCRUD/eliminar.php");
+      });
+      
+    </script>
 </body>
 </html>

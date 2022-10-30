@@ -1,0 +1,73 @@
+
+
+.acciones{
+    /*background-color: white;*/
+    text-align: center;
+    height: auto;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+.boton-actuador{
+    width: auto;
+    height: 40px;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 30px;  
+    background-color: rgb(236, 230, 230);
+    font-weight: bold;
+    
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+
+    border-top-width:1px;
+    border-left-width:1px;
+    border-right-width:1px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    border-color: rgba(129, 127, 127, 0.699);
+    transition: 0.9s;
+}
+
+.boton-actuador:hover{
+    box-shadow: 0px -8px 18px -5px rgba(0,0,0,0.67);
+    background-color: rgb(175, 175, 174);
+    border-color: rgb(158, 158, 158);
+}
+
+.m-contenido{
+    border-top-style: solid;
+    border-top-width:2px;
+    border-color: rgba(129, 127, 127, 0.699);
+}
+
+/*  Para formularios    */
+
+.formGral{
+    display: grid;
+}
+
+
+
+/*  Fin para formularios    */
+
+/* Media querys */
+@media (max-width: 790px){
+    
+    .boton-actuador{
+        height: 60px;
+    }
+
+    .botones{
+        margin-top: -60px;
+    }
+    
+}
