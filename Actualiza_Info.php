@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styleregistrar.css">
-    <script src="js/registrar.js"></script>
-    <title>Registrarse</title>
+    <link rel="stylesheet" href="css/A_precios.css">
+    <script src="js/verifRegistrar.js"></script>
+    <script src="alertify/alertify.js"></script>
+    <link rel="stylesheet" href="alertify/alertify.css">
+    <title>Actualizar información</title>
 </head>
 <style>
           input::-webkit-outer-spin-button,
@@ -30,39 +32,37 @@
           <div class="col-md-8 login">
               <div class="card">
                 <div class="Contenido">
-                  <h2>Regístrate</h2>
-                    <form>     
+                  <h2>Actualizar información</h2>
+                    <form action="Registrate.php" method="post">     
 
                       <div class="inputBx">
-                        <h4>Nombre </h4>
-                        <input type="text">
+                        <h4>Marca de garrafón </h4>
+                        <input type="text" id = "inputNombreC">
+                      </div>
+
+
+                      <div class="inputBx">
+                        <h4>Descripción</h4>
+                        <input type="text" id = "inputCorreo">
                       </div>
 
                       <div class="inputBx">
-                        <h4>Teléfono </h4>
-                        <input type="number">
-                      </div>
-
-                      <div class="inputBx">
-                        <h4>Contraseña</span>
-                        <input type="password">
-                      </div>
-                      
-                      <div class="inputBx">
-                        <h4>Dirección</span>
-                        <input type="email">
+                        <h4>Precio actual / nuevo</span>
+                        <input type="number" id = "inputPass">
                       </div>
                       
 
                      
-                      <a href="" class="animated" id="an">
-                        <span style="left: 170px; top:25px;"></span>
-                        Registrarme
-                      </a>
-    
-                      <div class="inputBx">
-                        <p>¿Ya tienes una cuenta? <a href="Login.html">Iniciar sesión</a></p>
+                      <div class="animated" id="an"> 
+                       <span style="left: 170px; top:25px;"></span>
+                       Buscar 
                       </div>
+
+                      <div class="animated" id="an"> 
+                        <span style="left: 170px; top:25px;"></span>
+                        Actualizar 
+                    </div>
+                        
     
                     </form>              
                 </div>

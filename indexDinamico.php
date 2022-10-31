@@ -54,6 +54,7 @@
                     ?>
                     <a href="Mensajes.html" class="nav-item nav-link" style="display:block;">Buzón de mensajes</a>
                     <a href="inventario.html" class="nav-item nav-link" style="display:block;">Inventario</a>
+                    <a href="Actualiza_Info.php" class="nav-item nav-link" style="display:block;">Modificar</a>
                     <?php
                         }
                     ?>
