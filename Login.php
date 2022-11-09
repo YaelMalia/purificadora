@@ -26,7 +26,7 @@
           <div class="card" id = "card">
             <div class="Contenido">
               <h2>Iniciar sesión</h2>
-                <form action="indexDinamico.php" method = "post">               
+                <form action="indexDinamico.php" method = "get">               
                   <div class="inputBx">
                     <span>Correo</span>
                     <input type="text" id = "inputCorreo">
