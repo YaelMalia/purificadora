@@ -47,9 +47,9 @@
                 </div>
                 <div class="navbar-nav ms-auto">
                 <a href="#Instalaciones" class="nav-item nav-link">Instalaciones</a>
-                    <a href="Precios.php" class="nav-item nav-link">Precios</a>
+                    <a href="#" class="nav-item nav-link">Precios</a>
                     <?php 
-                        if($_SESSION["correo"] == "pgotadeangel@gmail.com"){
+                        if($_SESSION["tipo"] == 1){
 
                     ?>
                     <a href="Mensajes.html" class="nav-item nav-link" style="display:block;">Buzón de mensajes</a>
