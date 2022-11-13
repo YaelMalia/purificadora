@@ -30,7 +30,7 @@ if ( $gClient->getAccessToken() ) { //SE HA LOGUEADO
 	{
 		$errorNI="No es correo de ITESA";	
 		$authUrl = $gClient->createAuthUrl();
-		$output = '<a href="' . filter_var( $authUrl, FILTER_SANITIZE_URL ) . '"><img src="gmail.png" alt=""/></a>';
+		$output = '<a href="' . filter_var( $authUrl, FILTER_SANITIZE_URL ) . '"><img src="sources/images/gmail.png" alt=""/></a>';
 	}
 	else
 	{
