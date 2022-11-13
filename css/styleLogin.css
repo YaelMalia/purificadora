@@ -134,6 +134,35 @@ body
     margin-left:50px;
     margin-top: 37px;
 }
+
+/*Boton de google */
+div .sci
+{
+    margin-top: 40px;
+    display: absolute;
+    
+}
+div .sci li
+{
+    list-style: none;
+    margin-right: 15px;
+}
+
+div .sci li a
+{
+    color: #fff;
+    font-size: 2em;
+    color: #ccc;
+}
+
+div .sci li a:hover
+{
+    color: #ff578b;
+}
+
+
+
+
 /*-----   Responsive design   -----*/
 
 @media (max-width: 800px) {
