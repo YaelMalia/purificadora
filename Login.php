@@ -45,6 +45,12 @@
                     <input class="btnlogueo" type="submit" value="Iniciar sesión" onclick=" return VerifDatosLogin();">
                   </div>
 
+                  <div>
+                    <ul class="sci">
+                      <li><a href="index2.php"><ion-icon name="logo-google"></ion-icon></a></li>
+                    </ul>
+                  </div>
+
                   <div class="inputBx">
                     <p>¿No tienes una cuenta? <a href="Registrate.php">Regístrate</a></p>
                   </div>
@@ -57,6 +63,9 @@
     <!--FIN COLUMNAS DE LA TARJETA-->
   </div>
 
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>-
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!--Scripts JS y JQ-->
 <script type="text/javascript">
   

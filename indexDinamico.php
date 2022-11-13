@@ -49,7 +49,7 @@
                 <a href="#Instalaciones" class="nav-item nav-link">Instalaciones</a>
                     <a href="#" class="nav-item nav-link">Precios</a>
                     <?php 
-                        if($_SESSION["tipo"] == 1){
+                        if($_SESSION["correo"] == "pgotadeangel@gmail.com"){
 
                     ?>
                     <a href="Mensajes.html" class="nav-item nav-link" style="display:block;">Buzón de mensajes</a>
