@@ -1,6 +1,6 @@
 
 
-function VerifReg(){
+/*function VerifReg(){
     let nombreC = document.getElementById("inputNombreC").value;
     let direccion = document.getElementById("inputDireccion").value;
     let telefono = document.getElementById("inputTelf").value;
@@ -41,3 +41,4 @@ function VerifReg(){
         }
     }
 }
+*/
