@@ -82,15 +82,12 @@
 
       if (name == "" || correo == "" || pass == "") {
         alertify.alert("AVISO", "Algunos campos no están llenos")
-      } 
-      else 
-      {
+      } else {
 
-        let parametros = 
-        {
+        let parametros = {
           "name": name,
           "correo": correo,
-          "pass":pass
+          "pass": pass
         };
 
         $.ajax({
@@ -98,20 +95,16 @@
           url: "ValidaReg.php",
           data: parametros,
           async: false,
-          success:function(r)
-          {
-            if(r=="si")
-            {
-              alertify.alert("ÉXITO","El usuario se ha registrado con éxito!")
+          success: function(r) {
+            if (r == "si") {
+              alertify.alert("ÉXITO", "El usuario se ha registrado con éxito!")
             }
-            if(r=="no")
-            {
-              alertify.alert("ERROR","Algo ha salido mal!")
+            if (r == "no") {
+              alertify.alert("ERROR", "Algo ha salido mal!")
             }
           }
         });
       }
-
     }
   </script>
 </body>

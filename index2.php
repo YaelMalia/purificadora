@@ -38,10 +38,12 @@ if ( $gClient->getAccessToken() ) { //SE HA LOGUEADO
 		//SE PUEDE HACER CONSULTA A BASE DE DATOS Y VERIFICAR USUARIO
 		if($p1="pgotadeangel")
 		{
+			$_SESSION["correo"] = $email;
 			header('Location:indexDinamico.php');	
 		}
 		else
 		{
+			#header('Location:indexDinamico.php');
 			$errorNI="NO TE ENCUENTRAS EN LA BASE DE DATOS DE ...";
 			$authUrl = $gClient->createAuthUrl();
 			$output = '<a href="' . filter_var( $authUrl, FILTER_SANITIZE_URL ) . '"><img src="sources/images/gmail.png" alt=""/></a>';

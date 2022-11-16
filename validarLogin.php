@@ -9,9 +9,9 @@
         if(count($data)>0){
             session_start();
             foreach($data as $fila){
-                $_SESSION["usuario"] = $fila["usuario"];
-                $_SESSION["tipo"] = $fila["tipoUser"];
+                $_SESSION["nombreCompleto"] = $fila["nombreCompleto"];
                 $_SESSION["correo"] = $fila["correo"];
+                $_SESSION["pass"] = $fila["contra"];
             }
             echo "correcto";
         }else{
