@@ -45,11 +45,13 @@ class Usuarios
         }
     }
 
-    public function insertar($p1)
+    public function insertar($name, $correo, $pass)
     {
         try {
-            $query = $this->dbh->prepare("INSERT INTO tabla VALUES (?)");
-            $query->bindParam(1, $p1);
+            $query = $this->dbh->prepare("INSERT INTO usuarios (nombreCompleto, correo, contra) VALUES (?, ?, ?)");
+            $query->bindParam(1, $name);
+            $query->bindParam(2, $correo);
+            $query->bindParam(3, $pass);
             $query->execute();
             return $query->fetchAll();
             $this->dbh = null;

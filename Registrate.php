@@ -98,6 +98,7 @@
           success: function(r) {
             if (r == "si") {
               alertify.alert("ÉXITO", "El usuario se ha registrado con éxito!")
+              header("Location:Login.php");
             }
             if (r == "no") {
               alertify.alert("ERROR", "Algo ha salido mal!")
