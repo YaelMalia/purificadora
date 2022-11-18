@@ -45,6 +45,21 @@ class Usuarios
         }
     }
 
+
+
+
+    public function get_ventas()
+    {
+        try {
+            $query = $this->dbh->prepare("SELECT * FROM ventas WHERE 1");
+            $query->execute();
+            return $query->fetchAll();
+            $this->dbh = null;
+        }catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
+
     public function insertar($name, $correo, $pass)
     {
         try {
@@ -60,10 +75,26 @@ class Usuarios
         }
     }
 
-    public function Borrar($p1)
+    public function insertarVenta($name, $domicilio, $garrafon)
+    {
+        try {
+            $query = $this->dbh->prepare("INSERT INTO ventas (nameCliente, domicilio, totGarrafones) VALUES (?, ?, ?)");
+            $query->bindParam(1, $name);
+            $query->bindParam(2, $domicilio);
+            $query->bindParam(3, $garrafon);
+            $query->execute();
+            return $query->fetchAll();
+            $this->dbh = null;
+        }catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
+
+
+    public function BorrarVenta($p1)
     {
         try {  
-            $query = $this->dbh->prepare("DELETE FROM tabla WHERE campo LIKE ?");
+            $query = $this->dbh->prepare("DELETE FROM ventas WHERE id_venta LIKE ?");
             $query->bindParam(1, $p1);
             $query->execute();
             return $query->fetchAll();
