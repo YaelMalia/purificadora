@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- includes  -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <!-- <script src="js/verifLogin.js"></script> -->
+    <script src="alertify/alertify.js"></script>
+    <link rel="stylesheet" href="alertify/alertify.css">
+    <script src="js/jquery.js"></script>
+<!-- Fin includes-->
+    <title>Reseñas</title>
+</head>
+<body id = "cuerpo">
+
+  <div class="container-fluid" id = "mainsin"> 
+
+    <!--COLUMNAS DE LA TARJETA-->
+    <div class="row">
+      <img src="sources/images/logo-purificadora.png" alt="Purificadora gota de ángel" class="logo-img">
+      <div class="col-md-6 login" id = "login">
+          <div class="card" id = "card">
+            <div class="Contenido">
+              <h2>Realizar reseña</h2>
+                <!-- <form  method="post">                -->
+                  <div class="inputBx">
+                    <span>Su nombre</span>
+                    <input type="text" id = "inputNombre">
+                  </div>
+
+                  <div class="inputBx">
+                    <span>Reseña o comentario</span>
+                    <input type="text" id="resenaG" style="height: 150px; overflow-y: scroll; overflow-x: hidden;">
+                  </div>
+
+                  <div class="inputBx">
+                   <button class="btnlogueo" onclick="enviarR()" style="width:180px;">Enviar reseña</button>
+                  </div>
+                <!-- </form>               -->
+            </div>
+          </div>
+      </div>
+    </div>
+    <!--FIN COLUMNAS DE LA TARJETA-->
+  </div>
+<!--Scripts JS y JQ-->
+    <script type="text/javascript">
+            function enviarR(){
+                let name = $("#inputNombre")[0].value;
+                let resena = $("#resenaG")[0].value;
+                if (name == "" || resena == "") {
+                    alertify.alert("AVISO", "Algunos campos no están llenos");
+                } else {
+
+                let parametros = {
+                "name": name,
+                "resena": resena
+                };
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "ResenaSender.php",
+                        data: parametros,
+                        async: false,
+                        success: function(r) {
+                            if (r == "si") {
+                                alertify.alert("ÉXITO", "La reseña se ha enviado con éxito, ¡gracias por su comentario para hacer que sigamos mejorando!");
+                                document.getElementById("inputNombre").value = "";
+                                document.getElementById("resenaG").value = "";
+                            }
+                            if (r == "no") {
+                                alertify.alert("ERROR", "Algo ha salido mal, parece no haber conexión");
+                            }
+                        }
+                    });
+                }
+            }
+
+            $("#enviR").click(function(){
+                alert("siu");
+            });
+    </script>
+  
+
+
+</body>
+</html>
