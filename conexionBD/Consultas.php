@@ -117,6 +117,21 @@ class Usuarios
         }
     }
 
+    public function Actualizarv($p1,$p2,$p3,$p4)
+    {
+        try {
+            $query = $this->dbh->prepare("UPDATE ventas SET nameCliente=?, domicilio=?, totGarrafones=? WHERE id_venta LIKE ?");
+            $query->bindParam(1, $p1);
+            $query->bindParam(2, $p2);
+            $query->bindParam(3, $p3);
+            $query->bindParam(4, $p4);
+            $query->execute();
+            $this->dbh = null;
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
+
    
  
     public function __clone()

@@ -96,7 +96,7 @@
               <div class="boton-actuador" id="insert"> Nueva venta </div>
               <div class="boton-actuador" id="update"> Modificar venta </div>
               <div class="boton-actuador" id="delete"> Eliminar venta </div>
-              <div class="boton-actuador" id="find"> Consultar ventas </div>
+              <div class="boton-actuador" id="consult"> Consultar ventas </div>
             </div>
             <!--  Div para obtener formulario  -->
             <div class="m-contenido" id="m-contenido">
@@ -126,6 +126,11 @@
       $("#delete").click(function () {
         document.getElementById("m-contenido").innerHTML = "";
         $("#m-contenido").load("formulariosCRUD/eliminar.php");
+      });
+
+      $("#consult").click(function () {
+        document.getElementById("m-contenido").innerHTML = "";
+        $("#m-contenido").load("formulariosCRUD/consultar.php");
       });
 
     </script>
