@@ -8,15 +8,22 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styleContacto.css">
   <script src="js/jquery.js"></script>
-  <script src="js/jquery.js"></script>
+
   <script src="alertify/alertify.js"></script>
-  
   <link rel="stylesheet" href="alertify/alertify.css">
+
   <title>Contáctanos</title>
+
+  <script type="text/javascript">
+    window.onload = function(){
+      alertify.alert("AVISO","Antes de pedir, es importante hacerle mención que por su seguridad, 'Purificadora Gota de Angel' no publica ni hace uso de ningún dato privado que proporcione en este lugar.");
+    }
+  </script>
+
 </head>
 
 <body>
-
+  
   <div class="container-fluid">
     <div class="contacto">
       <div class="titulo">
@@ -27,45 +34,57 @@
         <!--FORMULARIO CONTACTAR-->
         <div class="form C">
           <h3><b>Realiza tu pedido</b></h3>
-          <form>
+          <form action = "emailSender.php" name = "formulario" method = "POST">
             <div class="usuarioInfo">
               <div class="detalle">
                 <div class="cajas">
-                  <span>Primer nombre</span>
-                  <input type="text" placeholder="Gota">
+                  <span>Nombre (s)</span>
+                  <input type="text" placeholder="Gota" name = "inputNombres">
                 </div>
                 <div class="cajas">
-                  <span>Apellido</span>
-                  <input type="text" placeholder="De Ángel">
+                  <span>Apellido (s)</span>
+                  <input type="text" placeholder="De Ángel" name = "inputApellidos">
                 </div>
               </div>
 
-              <div class="detalle">
-                <div class="cajas">
+              
+               <div class="detalle">
+                <!-- <div class="cajas">
                   <span>Correo electrónico</span>
-                  <input type="text" placeholder="purificadoraEZ@gmail.com">
+                  <input type="text" placeholder="purificadoraEZ@gmail.com" id = "inputCorreo" name = "inputCorreo">
                 </div>
+
+                <div class="cajas">
+                  <span>Contraseña de su correo</span>
+                  <input type="password" placeholder = "" name = "inputPass">
+                </div> -->
+               
+
                 <div class="cajas" style="width: 25%;">
                   <span>Teléfono</span>
-                  <input type="text" placeholder="548486844">
+                  <input type="text" placeholder="548486844" name = "inputNumero1">
                 </div>
                 <div style="margin-top:42.5px;">
                   <input type="button" id="btnMas" value="  +  ">
                 </div>
+              
+                <div class="cajas">
+                <div id="otroTel"> </div>
+                </div>
+                
               </div>
-              <div id="otroTel"> </div>
               <!--CAJA GRANDE TEXTO-->
               <div class="detalle2">
                 <div class="cajas">
                   <span>Mensaje</span>
-                  <textarea placeholder="Escribe tu mensaje aquí"></textarea>
+                  <textarea placeholder="Escribe tu mensaje aquí" name = "inputTextograndote" id = "inpTG" onclick = "Aviso()"></textarea>
                 </div>
               </div>
 
 
               <div class="detalle2">
                 <div class="cajas">
-                  <input type="submit" value="Pedir" style="font-weight: bold;">
+                  <input type="submit" value="Pedir" name = "Pedir" style="font-weight: bold;">
                 </div>
               </div>
             </div>
@@ -85,7 +104,7 @@
               <span>
                 <ion-icon name="mail"></ion-icon>
               </span>
-              <p>purificadoraEZ@gmail.com</p>
+              <p>pgotadeangel@gmail.com</p>
             </div>
 
             <div>
@@ -107,6 +126,10 @@
                   <ion-icon name="information-circle-outline"></ion-icon>
                 </a></li>
             </ul>
+
+            <div class="dejar-resena" id="dejar-resena">
+              <a href="resenas.html" style = "text-decoration:none;" class = "demo rainbow enlace"> Dejar una reseña </a>
+            </div>
           </div>
 
         </div>
@@ -146,12 +169,16 @@
     $("#btnMas").click(function () {
       count++;
       if (count <= 1) {
-        $("#otroTel").append('<div class="cajas" style = "width: 25%; margin-left: 320px;">' +
+        $("#otroTel").append('<div class="cajas">' +
           '<span>Teléfono secundario</span>' +
-          '<input type="text" placeholder="548486844">' + '</div>');
+          '<input type="text" placeholder="548486844" name = "inputNumero2">' + '</div>');
       } else {
         alertify.alert("AVISO", "Solamente se puede agregar un teléfono extra");
       }
+    });
+
+    $("#inpTG").click(function(){
+    alertify.alert("AVISO", "En este cuadro de texto, usted deberá proporcionar la cantidad de productos a llevar, dirección de entrega de su pedido y especificaciones sobre el como entregarselo.\n ¡Agradecemos su preferencia!")
     });
   </script>
 
