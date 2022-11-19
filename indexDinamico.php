@@ -24,9 +24,9 @@
 
 
     <script type="text/javascript">
-        function ocultarCalaverita(){
-            $("#calaverita").slideUp(800);
-        }
+        // function ocultarCalaverita(){
+        //     $("#calaverita").slideUp(800);
+        // }
     </script>
 </head>
 <header id="header" class="header">
@@ -49,10 +49,10 @@
                 <a href="#Instalaciones" class="nav-item nav-link">Instalaciones</a>
                     <a href="Precios.php" class="nav-item nav-link">Precios</a>
                     <?php 
-                        if($_SESSION["correo"] == "pgotadeangel@gmail.com"){
+                        if(($_SESSION["correo"] == "pgotadeangel@gmail.com") || ($_SESSION["correo"] == "yaelcruz417@gmail.com")){
 
                     ?>
-                    <a href="Mensajes.html" class="nav-item nav-link" style="display:block;">Buzón de mensajes</a>
+                    <a href="Mensajes.php" class="nav-item nav-link" style="display:block;">Buzón de mensajes</a>
                     <a href="inventario.html" class="nav-item nav-link" style="display:block;">Inventario</a>
                     <a href="Actualiza_Info.php" class="nav-item nav-link" style="display:block;">Modificar</a>
                     <?php
@@ -74,16 +74,16 @@
     <div id = "preloader" class="preloader">
         <span class="loader"></span>
     </div>
-    <div class="calaverita" id = "calaverita">
+    <!-- <div class="calaverita" id = "calaverita">
         <a href="javascript:void(0)" onclick="ocultarCalaverita()"><div style="position:absolute; color: #fff; left:95%"><b>X</b></div></a>
        <div style="margin-top: 10px; color: #fff;">
         <center><img src="sources/images/calaveras.png" height="150" alt="calaveritas">
         <div style="margin-top: 10px;">
             <h3 class="textoInt"><b>Felíz mes de los santos les desea</b>
-                <br><!--<img src="sources/images/LogoEmpresa.png" height="25" alt="LUX Enterprise">-->LUX Enterprise S.A. de C.V.</h3></center>
+                <br><img src="sources/images/LogoEmpresa.png" height="25" alt="LUX Enterprise">LUX Enterprise S.A. de C.V.</h3></center>
         </div>
        </div>
-    </div>
+    </div> -->
     <div id = "contenido" class="contenido">
         <section id="inicio"></section>
        <center>
@@ -155,7 +155,7 @@
     <!--Fin botón WhatsApp-->
 
     <!--Botón Pedidos-->
-    <a href="sendEmail.html" id="Pedidos" class="Pedidos">
+    <a href="sendEmail.php" id="Pedidos" class="Pedidos">
         <img src="sources/images/Pedidos.png" alt="Contactanos"  width="50" height="50" style="border-radius: 10px;">
     </a>
     <!--Fin botón Pedidos-->

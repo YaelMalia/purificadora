@@ -2,7 +2,7 @@ window.onload = function(){
     ocultarBody();
     setTimeout(ocultarPre, 4000);
     setTimeout(mostrarBody, 4001);
-    setTimeout(mostrarCalaverita, 5500);
+    // setTimeout(mostrarCalaverita, 5500);
 };
 
 
@@ -11,7 +11,7 @@ function ocultarPre(){
 }
 
 function ocultarBody(){
-    document.getElementById("calaverita").style.display = "none";
+    // document.getElementById("calaverita").style.display = "none";
     document.getElementById("contenido").style.display = "none";
     document.getElementById("header").style.display = "none";
     document.getElementById("footer").style.display = "none";
@@ -29,6 +29,6 @@ function mostrarBody(){
 
 
 /* Para mes de muertos */
-function mostrarCalaverita(){
-    $("#calaverita").slideDown(800);
-}
+// function mostrarCalaverita(){
+//     $("#calaverita").slideDown(800);
+// }
