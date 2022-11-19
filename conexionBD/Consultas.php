@@ -139,4 +139,30 @@ class Usuarios
         trigger_error('La clonación no es permitida!.', E_USER_ERROR);
     }
 }
+// Reseñas
+public function insertarResena($name, $resena)
+{
+    try {
+        $query = $this->dbh->prepare("INSERT INTO resenas (remitente, comentario) VALUES (?, ?)");
+        $query->bindParam(1, $name);
+        $query->bindParam(2, $resena);
+        $query->execute();
+        return $query->fetchAll();
+        $this->dbh = null;
+    }catch (PDOException $e) {
+        $e->getMessage();
+    }
+}
+
+public function getResenas()
+{
+    try {
+        $query = $this->dbh->prepare("SELECT * FROM resenas WHERE 1");
+        $query->execute();
+        return $query->fetchAll();
+        $this->dbh = null;
+    }catch (PDOException $e) {
+        $e->getMessage();
+    }
+}
 ?>
