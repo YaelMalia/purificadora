@@ -4,15 +4,15 @@ class Usuarios
 {
     private static $instancia;
     private $dbh;
- 
+
     private function __construct()
     {
         try {
-	    $servidor="localhost";
-	    $base="purificadora";
-	    $usuario="root";
-	    $contrasenia="";
-	    $this->dbh = new PDO('mysql:host='.$servidor.';dbname='.$base, $usuario, $contrasenia);
+            $servidor = "localhost";
+            $base = "purificadora";
+            $usuario = "root";
+            $contrasenia = "";
+            $this->dbh = new PDO('mysql:host=' . $servidor . ';dbname=' . $base, $usuario, $contrasenia);
             $this->dbh->exec("SET CHARACTER SET utf8");
             $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -21,7 +21,7 @@ class Usuarios
             die();
         }
     }
- 
+
     public static function singleton()
     {
         if (!isset(self::$instancia)) {
@@ -30,7 +30,7 @@ class Usuarios
         }
         return self::$instancia;
     }
- 
+
     public function get_user($correo, $pass)
     {
         try {
@@ -40,7 +40,7 @@ class Usuarios
             $query->execute();
             return $query->fetchAll();
             $this->dbh = null;
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             $e->getMessage();
         }
     }
@@ -55,7 +55,7 @@ class Usuarios
             $query->execute();
             return $query->fetchAll();
             $this->dbh = null;
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             $e->getMessage();
         }
     }
@@ -70,7 +70,7 @@ class Usuarios
             $query->execute();
             return $query->fetchAll();
             $this->dbh = null;
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             $e->getMessage();
         }
     }
@@ -85,7 +85,7 @@ class Usuarios
             $query->execute();
             return $query->fetchAll();
             $this->dbh = null;
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             $e->getMessage();
         }
     }
@@ -93,18 +93,18 @@ class Usuarios
 
     public function BorrarVenta($p1)
     {
-        try {  
+        try {
             $query = $this->dbh->prepare("DELETE FROM ventas WHERE id_venta LIKE ?");
             $query->bindParam(1, $p1);
             $query->execute();
             return $query->fetchAll();
             $this->dbh = null;
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             $e->getMessage();
         }
     }
- 
-    public function Actualizar($p1,$p2)
+
+    public function Actualizar($p1, $p2)
     {
         try {
             $query = $this->dbh->prepare("UPDATE tabla SET campo1=? WHERE campo2 LIKE ?");
@@ -117,7 +117,7 @@ class Usuarios
         }
     }
 
-    public function Actualizarv($p1,$p2,$p3,$p4)
+    public function Actualizarv($p1, $p2, $p3, $p4)
     {
         try {
             $query = $this->dbh->prepare("UPDATE ventas SET nameCliente=?, domicilio=?, totGarrafones=? WHERE id_venta LIKE ?");
@@ -132,37 +132,36 @@ class Usuarios
         }
     }
 
-   
- 
+
+
     public function __clone()
     {
         trigger_error('La clonación no es permitida!.', E_USER_ERROR);
     }
-}
-// Reseñas
-public function insertarResena($name, $resena)
-{
-    try {
-        $query = $this->dbh->prepare("INSERT INTO resenas (remitente, comentario) VALUES (?, ?)");
-        $query->bindParam(1, $name);
-        $query->bindParam(2, $resena);
-        $query->execute();
-        return $query->fetchAll();
-        $this->dbh = null;
-    }catch (PDOException $e) {
-        $e->getMessage();
+    // Reseñas
+    public function insertarResena($name, $resena)
+    {
+        try {
+            $query = $this->dbh->prepare("INSERT INTO resenas (remitente, comentario) VALUES (?, ?)");
+            $query->bindParam(1, $name);
+            $query->bindParam(2, $resena);
+            $query->execute();
+            return $query->fetchAll();
+            $this->dbh = null;
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
     }
-}
 
-public function getResenas()
-{
-    try {
-        $query = $this->dbh->prepare("SELECT * FROM resenas WHERE 1");
-        $query->execute();
-        return $query->fetchAll();
-        $this->dbh = null;
-    }catch (PDOException $e) {
-        $e->getMessage();
+    public function getResenas()
+    {
+        try {
+            $query = $this->dbh->prepare("SELECT * FROM resenas WHERE 1");
+            $query->execute();
+            return $query->fetchAll();
+            $this->dbh = null;
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
     }
 }
-?>
