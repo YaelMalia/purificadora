@@ -35,31 +35,37 @@ if(isset($_POST["inputNombres"])){
 try {
     
         // Crear una instancia de la clase PHPMailer
-        $mail = new PHPMailer(true);
+        $mail = new PHPMailer();
         $mail->isSMTP();
         // $mail->SMTPDebug = 3;   
-        $mail->SMTPAuth = true; 
-        $mail->SMTPSecure = "tls";    
-        $mail->Host = "smtp.gmail.com";
-        // $mail->Host = "localhost";
+        $mail->Host = "smtp.office365.com";
         $mail->Port = 587;
-        $mail->Username = "19030263@itesa.edu.mx";
-        $mail->Password = "$0$3V3R44Gu1L4R";
-        $mail->setFrom('19030263@itesa.edu.mx', 'Gota de angel');
+        $mail->SMTPSecure = "STARTTLS";  
+        $mail->SMTPAuth = true;    
+        // $mail->Host = "localhost";
+        //Descomentar las dos libeas siguientes
+        #$mail->Username = "jshadowbuga@outlook.es";
+        #$mail->Password = "V3R44Gu1L4R";
+        #De donde viene
+        $mail->setFrom('jshadowbuga@outlook.es', 'Nuevo pedido');
+        #A quien se envía
         $mail->addAddress('pgotadeangel@gmail.com', 'Gota de angel');
-        
+        $mail->Subject = 'Pedido de garrafones';    
+        $mail->msgHTML($CuerpodelCorreo);
 
-        $mail->CharSet = 'UTF-8';
+
+        /*$mail->CharSet = 'UTF-8';
         $mail->Encoding = 'base64';
+        */
         $mail->isHTML(true);
+        #$mail->Body = $CuerpodelCorreo;
         
-        
-        $mail->Subject = 'Pedido de garrafones';
-
-        $mail->Body = $CuerpodelCorreo;
-        
-        $mail->AltBody = 'No Alt Body';
-        $mail->send();
+        #$mail->AltBody = 'No Alt Body';
+        #$mail->send();
+        if(!$mail->send())
+        {
+            echo $mail->ErrorInfo;
+        }
         ?>
         <script type = "text/javascript">
             alertify.alert("EXITO", "Su pedido se ha realizado correctamente. ¡Gracias por su preferencia!");
