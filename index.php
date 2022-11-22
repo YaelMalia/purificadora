@@ -1,3 +1,13 @@
+<?php 
+    if(isset($_COOKIE["cookieUsuario"]) && isset($_SESSION["nombreCompleto"])){
+        // session_start();
+        // $_SESSION["nombreCompleto"] = $_COOKIE["cookieUsuario"];
+        // $_SESSION["correo"] = $_COOKIE["cookieCorreo"];
+        // $_SESSION["pass"] = $_COOKIE["psd"];
+        header("Location:indexDinamico.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -123,7 +133,7 @@
                     </p>
                     <section id="Instalaciones">
                         <iframe class="Interiorinstalaciones" src="https://viewer.divein.studio/story/3Xw-otG"
-                            width="650" height="380" allowfullscreen></iframe>
+                            width="630" height="350" allowfullscreen></iframe>
                     </section>
                 </div>
 

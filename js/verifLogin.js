@@ -14,6 +14,7 @@ window.onload() = function(){
 */
 
 
+
 function VerifDatosLogin(){
     correo = document.getElementById("inputCorreo").value;
     if(correo == null || correo == "" || correo == "\\n"){
@@ -33,33 +34,68 @@ function VerifDatosLogin(){
         }else{
             //Función de logueo
             
-            parametros = {
-                "correo":correo,
-                "pass":pass
-            };
-            let SegundoR = "";
-            $.ajax({
-                type: 'POST',
-                url: "validarLogin.php",
-                data: parametros,
-                async: false,
-                success: function(resultado){
-                    if(resultado == "correcto"){
-                        SegundoR = "si";
+            if(clickCounter%2==0){
+                // alert("El checkbox ha sido deseleccionado");
+
+                parametros = {
+                    "correo":correo,
+                    "pass":pass
+                };
+                let SegundoR = "";
+                $.ajax({
+                    type: 'POST',
+                    url: "validarLogin.php",
+                    data: parametros,
+                    async: false,
+                    success: function(resultado){
+                        if(resultado == "correcto"){
+                            SegundoR = "si";
+                        }
+                        if(resultado == "incorrecto"){
+                            SegundoR = "no";
+                            alertify.alert("Error", "Correo o contraseña inválidos");
+                        }
                     }
-                    if(resultado == "incorrecto"){
-                        SegundoR = "no";
-                        alertify.alert("Error", "Correo o contraseña inválidos");
-                    }
+            
+                });
+                if(SegundoR == "si"){
+                    return true;
                 }
-        
-            });
-            if(SegundoR == "si"){
-                return true;
-            }
-            else{
-                return false;
-            }
+                else{
+                    return false;
+                }
+
+               }else{
+                //  alert("El checkbox ha sido seleccionado");
+                 //Se hace la captura de las cookies
+                 parametros = {
+                    "correo":correo,
+                    "pass":pass
+                };
+                let SegundoR = "";
+                $.ajax({
+                    type: 'POST',
+                    url: "validarLoginCookies.php",
+                    data: parametros,
+                    async: false,
+                    success: function(resultado){
+                        if(resultado == "correcto"){
+                            SegundoR = "si";
+                        }
+                        if(resultado == "incorrecto"){
+                            SegundoR = "no";
+                            alertify.alert("Error", "Correo o contraseña inválidos");
+                        }
+                    }
+            
+                });
+                if(SegundoR == "si"){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+               }
         }
     }
 }

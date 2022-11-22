@@ -35,7 +35,14 @@
             <a href="#" class="navbar-brand">
                 <div style="width: 125px; border-right-width: 1px; border-right-style:solid; border-color:rgba(209, 208, 208, 0.699);">
                     <img src="sources/images/logo-purificadora.png" height="80" alt="Purificadora gota de ángel" class="logo-img">
-
+                    <?php if(isset($_SESSION["correo"])){
+                        ?>
+                        <img src="sources/images/user.png" alt="Usuario Gota de Angel" width = "40" height = "40" style = "margin-left:60px;">
+                          <b style = "font-size:10px;">
+                        <?php
+                        echo $_SESSION["nombreCompleto"];
+                    } ?>
+                    </b>
                 </div>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -46,7 +53,7 @@
                     
                 </div>
                 <div class="navbar-nav ms-auto">
-                <a href="#Instalaciones" class="nav-item nav-link">Instalaciones</a>
+                <!-- <a href="#Instalaciones" class="nav-item nav-link">Instalaciones</a> -->
                     <a href="Precios.php" class="nav-item nav-link">Precios</a>
                     <?php 
                         if(($_SESSION["correo"] == "pgotadeangel@gmail.com") || ($_SESSION["correo"] == "yaelcruz417@gmail.com")){
@@ -61,7 +68,7 @@
                     <?php 
                         if(isset($_SESSION["correo"])){
                     ?>
-                    <a id="cerrar" href="index.html" class="nav-item nav-link active">Cerrar sesión</a>
+                    <a id="cerrar" href="index.php" class="nav-item nav-link active">Cerrar sesión</a>
                     <?php 
                         }
                     ?>
@@ -131,7 +138,7 @@
             <div class="f-part">
                 <p><h3>Interior de las instalaciones</h3></p>
             <section id="Instalaciones">
-                <iframe class="Interiorinstalaciones" src="https://viewer.divein.studio/story/3Xw-otG" width="650" height="380" allowfullscreen></iframe>
+                <iframe class="Interiorinstalaciones" src="https://viewer.divein.studio/story/3Xw-otG" width="630" height="385" allowfullscreen></iframe>
             </section>
             </div>
             
@@ -166,7 +173,7 @@
 <script type = "text/javascript">
         $("#cerrar").click(function(){
             $.post("EndSession.php");
-            window.location.href = "index.html";
+            window.location.href = "index.php";
         });
     </script>
 

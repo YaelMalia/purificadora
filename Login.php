@@ -26,7 +26,24 @@
           <div class="card" id = "card">
             <div class="Contenido">
               <h2>Iniciar sesión</h2>
-                <form action="indexDinamico.php" method = "get">               
+                <form action="indexDinamico.php" method = "get">  
+                  
+                
+                <?php
+                    if(isset($_COOKIE["cookieUsuario"]) && !isset($_SESSION["nombreCompleto"])){
+                ?>
+                  <div class="inputBx">
+                    <span>Correo</span>
+                    <input type="text" id = "inputCorreo" value = "<?php echo $_COOKIE["cookieCorreo"];?>">
+                  </div>
+
+                  <div class="inputBx">
+                    <span>Contraseña</span>
+                    <input type="password"  id = "inputPass" value = "<?php echo $_COOKIE["psd"];?>">
+                  </div>
+                <?php
+                }else{
+                ?>
                   <div class="inputBx">
                     <span>Correo</span>
                     <input type="text" id = "inputCorreo">
@@ -36,9 +53,11 @@
                     <span>Contraseña</span>
                     <input type="password"  id = "inputPass">
                   </div>
-
+                <?php
+                }
+                ?>
                   <div class="remember">
-                    <label><input type="checkbox">Recuérdame</label>
+                    <label><input type="checkbox" id = "checkRecuerdame" >   Mantener sesión iniciada</label>
                   </div>
                  
                   <div class="inputBx">
@@ -68,10 +87,10 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!--Scripts JS y JQ-->
 <script type="text/javascript">
-  
+        var clickCounter = 0;
+       $("#checkRecuerdame").click(function(){
+        clickCounter+=1;
+       });
 </script>
-  
-
-
 </body>
 </html>

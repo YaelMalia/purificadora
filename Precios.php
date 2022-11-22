@@ -1,3 +1,4 @@
+<?php //include "scraping.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +13,8 @@
     <script src="js/verifRegistrar.js"></script>
     <script src="alertify/alertify.js"></script>
     <link rel="stylesheet" href="alertify/alertify.css">
-
-
+    
     <!-- SCRIPTS PARA PRECIOS RECUPERADOS DE MONGO -->
-
     <script type = "text/javascript">
 
         
@@ -46,6 +45,11 @@
         
     </script>
 
+    <style>
+        p{
+            text-align:justify;
+        }
+    </style>
     <!-- FIN DE SCRIPTS PARA MONGO -->
     <!-- Para documentación:
 
@@ -70,9 +74,10 @@
                 </p>
                 <a>PRECIO: $<b id = "precioBonafont"></b> MXN</a>
             </div>
+            <br>
+            
         </div>
-
-
+           
 
 
         <div class="card">
@@ -106,7 +111,63 @@
                 <a>PRECIO: $<b id = "precioEpura"></b> MXN</a>
             </div>
         </div>
+    </div>
+    
+    <div class="comparandoP" style = "margin-top:50px;">
+                
+                <center>
+                <button id = "BtnComparar" style = "background-color:#FF9983; width:200px; height:40px; border-radius:20px; color:white; border:none;">
+                    <b>Comparar precios</b>
+                </button>
+                </center>
+
+                <div class = "scraping container" id = "scraping">
+                    
+                
+                    <div class = "card" style="width: 300px; height: 500px;  overflow-y:scroll; text-align:center;">
+                                <h3>Bonafont</h3>
+                        <div class="scrapBonafont" id="scrapBonafont" >
+                            
+                        </div> 
+                    </div>           
+                    
+                    
+                    
+                    <div class = "card" style="width: 300px; height: 500px;  overflow-y:scroll; text-align:center;">
+                                    <h3>Ciel</h3>
+                        <div class="scrapCiel" id="scrapCiel">
+
+                        </div>
+                    </div>    
+                    
+                    
+                    <div class = "card" style="width: 300px; height: 500px;  overflow-y:scroll; text-align:center;">
+                                    <h3>E-Pura</h3>
+                        <div class="scrapEpura" id="scrapEpura">
+
+                        </div>
+                    </div>
+                    
+                </div>
 
     </div>
+       <script type = "text/javascript">
+        $("#BtnComparar").click(function(){
+            document.getElementById("scraping").style.display = "flex";
+            
+            $(function(){
+                $("#scrapBonafont").load("scrapingBonafont.php");
+            });
+
+            $(function(){
+                $("#scrapCiel").load("scrapingCiel.php");
+            });
+            
+            $(function(){
+                $("#scrapEpura").load("scrapingEpura.php");
+            });
+
+        });
+       </script>
 </body>
 </html>
