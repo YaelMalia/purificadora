@@ -10,7 +10,7 @@
 
                 $projeccion = ["projection" => ["productos.inventario" =>1, "_id"=>0] ];
                 $resultado = $connNoSQL ->
-                    consultaProjeccion("articulos", ["tienda" => "Super Malia"], $projeccion);
+                    consultaProjeccion("articulos", ["tienda" => "Gota de angel"], $projeccion);
                 
                 if(isset($resultado[0] -> productos -> inventario)){
                     $resultado = $resultado[0] -> productos -> inventario;
@@ -24,7 +24,7 @@
 
             case 'existe':
                 $projeccion = ["projection" => ["tienda"=>1,"_id"=>0]];
-                $tema = $connNoSQL->consultaProjeccion("articulos",["tienda"=>"Super Malia"],$projeccion);
+                $tema = $connNoSQL->consultaProjeccion("articulos",["tienda"=>"Gota de angel"],$projeccion);
                 if(isset($tema[0]->tienda)){
                     echo "si";
                 }else{
@@ -32,19 +32,19 @@
                 }
             break;
             case 'crearbase':
-                $connNoSQL->insertar("articulos",["tienda"=>"Super Malia"]);
+                $connNoSQL->insertar("articulos",["tienda"=>"Gota de angel"]);
                 
             break;
             case 'guardar':
 
                 $projeccion = ["projection" => ["tienda"=>1,"_id"=>0]];
-                $tema = $connNoSQL->consultaProjeccion("articulos",["tienda"=>"Super Malia"],$projeccion);
+                $tema = $connNoSQL->consultaProjeccion("articulos",["tienda"=>"Gota de angel"],$projeccion);
                 if(!isset($tema[0]->tienda)){
-                    $connNoSQL->insertar("articulos",["tienda"=>"Super Malia"]);
+                    $connNoSQL->insertar("articulos",["tienda"=>"Gota de angel"]);
                 }
                 $datos = $_POST['datos'];
                 $n = $_POST['Articulo'];
-                $connNoSQL->modificar("articulos",["tienda"=>"Super Malia"],["productos.inventario.".$n=>$datos]);      
+                $connNoSQL->modificar("articulos",["tienda"=>"Gota de angel"],["productos.inventario.".$n=>$datos]);      
                 
                 echo "Producto insertado correctamente";
 
@@ -54,7 +54,7 @@
                     $articulo = $_POST['Articulo'];
                     $projeccion = ["projection" => ["productos.inventario.".$articulo => 1, "_id" => 0]];
 
-                    $resultado = $connNoSQL -> consultaProjeccion("articulos", ["tienda" => "Super Malia"], $projeccion);
+                    $resultado = $connNoSQL -> consultaProjeccion("articulos", ["tienda" => "Gota de angel"], $projeccion);
 
                     if(isset($resultado[0] -> productos -> inventario -> $articulo)){
                         $resultado = $resultado[0] -> productos -> inventario -> $articulo;
@@ -69,20 +69,20 @@
             case 'eliminar':
                 $articulo = $_POST['Articulo'];
                 $campo = ["productos.inventario." .$articulo => 1];
-                $connNoSQL -> eliminarCampo("articulos", ["tienda" => "Super Malia"], $campo);
+                $connNoSQL -> eliminarCampo("articulos", ["tienda" => "Gota de angel"], $campo);
 
                 echo "Producto eliminado correctamente";
             break;
 
             case 'modificar':
                 $projeccion = ["projection" => ["tienda"=>1,"_id"=>0]];
-                $tema = $connNoSQL->consultaProjeccion("articulos",["tienda"=>"Super Malia"],$projeccion);
+                $tema = $connNoSQL->consultaProjeccion("articulos",["tienda"=>"Gota de angel"],$projeccion);
                 if(!isset($tema[0]->tienda)){
-                    $connNoSQL->insertar("articulos",["tienda"=>"Super Malia"]);
+                    $connNoSQL->insertar("articulos",["tienda"=>"Gota de angel"]);
                 }
                 $datos = $_POST['datos'];
                 $n = $_POST['Articulo'];
-                $connNoSQL->modificar("articulos",["tienda"=>"Super Malia"],["productos.inventario.".$n=>$datos]);      
+                $connNoSQL->modificar("articulos",["tienda"=>"Gota de angel"],["productos.inventario.".$n=>$datos]);      
                 
                 echo "Producto modificado correctamente";
             

@@ -1,7 +1,7 @@
 ﻿<?php
 	class connNoSQL
 	{
-        private $db   = "crud";   //Nombre de su base de datos en mongo
+        private $db   = "purificadora";   //Nombre de su base de datos en mongo
         private $host = "//localhost:27017";	//Puerto por donde se conecta
         
 		private static $instancia;
