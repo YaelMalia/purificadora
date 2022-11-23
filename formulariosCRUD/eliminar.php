@@ -72,7 +72,7 @@
                 async: false,
                 success: function(r) {
                     if (r == "si") {
-                        alertify.alert("ÉXITO", "venta eliminada!");
+                        alertify.alert("ÉXITO", "Venta eliminada!");
                     }
                     if (r == "no") {
                         alertify.alert("ERROR", "Algo ha salido mal!");
