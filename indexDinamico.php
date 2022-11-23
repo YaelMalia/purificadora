@@ -40,7 +40,7 @@
                         <img src="sources/images/user.png" alt="Usuario Gota de Angel" width = "40" height = "40" style = "margin-left:60px;">
                           <b style = "font-size:10px;">
                         <?php
-                        
+                        echo $_SESSION["nombreCompleto"];
                     } ?>
                     </b>
                 </div>
@@ -66,7 +66,7 @@
                         }
                     ?>
                     <?php 
-                        if(isset($_SESSION["correo"])){
+                        if(isset($_SESSION["correo"]) && !isset($_COOKIE["cookieCorreo"])){
                     ?>
                     <a id="cerrar" href="index.php" class="nav-item nav-link active">Cerrar sesión</a>
                     <?php 

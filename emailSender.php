@@ -44,8 +44,8 @@ try {
         $mail->SMTPAuth = true;    
         // $mail->Host = "localhost";
         //Descomentar las dos libeas siguientes
-        #$mail->Username = "jshadowbuga@outlook.es";
-        #$mail->Password = "V3R44Gu1L4R";
+        // $mail->Username = "jshadowbuga@outlook.es";
+        // $mail->Password = "V3R44Gu1L4R";
         #De donde viene
         $mail->setFrom('jshadowbuga@outlook.es', 'Nuevo pedido');
         #A quien se envía

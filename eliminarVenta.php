@@ -10,6 +10,6 @@
     else
     {
         echo "no";
-        header("Location:index.html");
+        header("Location:index.php");
     }
 ?>

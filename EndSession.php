@@ -6,5 +6,6 @@
     $_SESSION["pass"] = null;
     session_destroy();
     // setcookie("cookieCorreo", $_SESSION["correo"], time() - 84600);
-    // setcookie("cookieUsuario", $_SESSION["nombreCompleto"], time() - 84600);
+    // 
+    setcookie("PHPSESSID", $_COOKIE[session_name()], time() - 84600);
 ?>

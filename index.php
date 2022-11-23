@@ -1,9 +1,9 @@
 <?php 
-    if(isset($_COOKIE["cookieUsuario"]) && isset($_SESSION["nombreCompleto"])){
-        // session_start();
-        // $_SESSION["nombreCompleto"] = $_COOKIE["cookieUsuario"];
-        // $_SESSION["correo"] = $_COOKIE["cookieCorreo"];
-        // $_SESSION["pass"] = $_COOKIE["psd"];
+    if(isset($_COOKIE["cookieUsuario"]) && isset($_COOKIE["PHPSESSID"])){
+        session_start();
+        $_SESSION["nombreCompleto"] = $_COOKIE["cookieUsuario"];
+        $_SESSION["correo"] = $_COOKIE["cookieCorreo"];
+        $_SESSION["pass"] = $_COOKIE["psd"];
         header("Location:indexDinamico.php");
     }
 ?>
